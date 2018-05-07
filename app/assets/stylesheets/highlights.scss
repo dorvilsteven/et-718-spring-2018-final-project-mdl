@@ -1,0 +1,83 @@
+// Place all the styles related to the Highlights controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* watch highlight content section */
+.vid-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "title title title"
+                       "video video video"
+                       "video video video"
+                       "desc desc desc"
+                       "butt butt butt";
+  margin: 5px;
+  padding: .5rem;
+  box-shadow: 10px 10px 5px grey;
+  max-width: 360px;
+  justify-items: center;
+  background: Snow;
+}
+
+.title {
+  grid-area: title;
+}
+
+.vid-preview {
+  grid-area: video;
+}
+
+.vid-description {
+  grid-area: desc;
+}
+
+.list {
+  grid-area: butt;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "sh ed des";
+}
+
+.show {
+  grid-area: sh;
+}
+
+.edit {
+  grid-area: ed;
+}
+
+.destroy {
+  grid-area: des;
+}
+
+.vid-container button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #a6a6a6;
+  width: 100%;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+
+/* end watch highlight content section */
+
+
+/* highlight section */
+
+.showoff {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 33.3333%);
+  justify-items: center;
+  background: WhiteSmoke;
+}
+
+/* end highlight section */

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<!-- Content section --> 
+<div class="showoff">
+<% @highlights.each do |highlight| %>
+
+    <div class="vid-container">
+      <div class="title">
+        <h5><%= highlight.title %></h5>
+      </div>
+      <div class="vid-preview">
+        <video width="360">
+          <source src="<%= highlight.clip %>" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="vid-description">
+        <p><%= highlight.description %></p>
+      </div>
+        <div class="list">
+          <div class="show">
+            <button><%= link_to 'Show', highlight %></button>
+          </div>
+          <div class="edit">
+            <button><%= link_to 'Edit', edit_highlight_path(highlight) %></button>
+          </div>
+          <div class="destroy">
+            <button><%= link_to 'Delete', highlight, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          </div>
+        </div>
+    </div>
+<% end %>
+</div>
+
+<!-- end content section -->
+

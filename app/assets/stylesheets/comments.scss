@@ -1,0 +1,50 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.showcase {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    'video video add-comment'
+    'video video comments';
+}
+
+.vid-showcase {
+  grid-area: video;
+  min-height: 400px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.vid-showcase h5 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.vid-showcase p {
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+/* Comment */
+.top-box {
+  background: #ddd;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  padding: 1.5rem;
+}
+
+.add-comment{
+  grid-area: add-comment;
+}
+
+.comments {
+  grid-area: comments;
+}

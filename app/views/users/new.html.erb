@@ -1,0 +1,30 @@
+
+<%= form_for @user do |f| %>
+
+  <% if @user.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+    </div>
+  <% end %>
+  
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <%= f.label :email %><br />
+        <%= f.text_field :email %>
+      <%= f.label :password %><br />
+        <%= f.password_field :password %>
+      <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation %>
+      <button><%= f.submit "Sign Up" %></button>
+      <p class="message">Already registered?<%= link_to "Log In", login_path %></p>
+    </form>
+  </div>
+</div>
+
+<% end %>

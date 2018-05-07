@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<div class="showcase">
+<div class="vid-showcase">
+<div class="header">
+<p>
+  <h5><strong><%= @highlight.title %></strong></h5>
+</p>
+</div>
+
+<p class="video-player">
+  <link href="https://vjs.zencdn.net/5.10.4/video-js.css" rel="stylesheet">
+  <div>
+    <video id="my-video" class="video-js" controls preload="auto" width="1080" height="480" data-setup='{"playbackRates": [0.25, 0.5, 1, 1.5, 2] }'>
+      <source src="<%= @highlight.clip %>" type='video/mp4'>
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+    </video>
+  </div>
+
+  <script src="https://vjs.zencdn.net/5.10.4/video.js"></script>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @highlight.description %>
+</p>
+</div>
+
+<div class="comment-container">
+    <div class="add-comment">
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %>
+    </div>
+    <div class="comments">
+        <h2>Comments</h2>
+        <%= render @highlight.comments %>
+    </div>
+</div>
+</div>
+
+<%= link_to 'Edit', edit_highlight_path(@highlight) %> |
+<%= link_to 'Back', highlights_path %>

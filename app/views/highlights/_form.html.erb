@@ -1,0 +1,28 @@
+<%= form_with(model: highlight, local: true) do |form| %>
+  <% if highlight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(highlight.errors.count, "error") %> prohibited this highlight from being saved:</h2>
+
+      <ul>
+      <% highlight.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="login-page">
+    <div class="form">
+      <form class="register-form">
+        <%= form.label :title %>
+          <%= form.text_field :title, id: :highlight_title %>
+        <%= form.label :clip %>
+          <%= form.text_field :clip, id: :highlight_clip %>
+        <%= form.label :description %>
+          <%= form.text_area :description, id: :highlight_description %>
+        <button><%= form.submit %></button>
+      </form>
+        <%= link_to 'Back', highlights_path %>
+    </div>
+  </div>
+<% end %>
